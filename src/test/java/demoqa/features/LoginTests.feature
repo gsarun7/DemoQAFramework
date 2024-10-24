@@ -1,5 +1,5 @@
 Feature: Login Test
-
+  @RegTC
   Scenario Outline: Valid Login scenario
     Given Open URl
     And click login

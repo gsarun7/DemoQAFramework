@@ -1,5 +1,5 @@
 Feature: Browser Windows Test
-
+  @RegTC
   Scenario: Browser navigation scenario
     Given Open URl
     And Click new window button
