@@ -1,5 +1,5 @@
 Feature: Student Registration Form Test
-
+  @RegTC
   Scenario Outline: Verify student registration form submission
     Given Open URl
     And Click on Form section
