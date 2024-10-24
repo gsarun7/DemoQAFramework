@@ -10,11 +10,16 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import test.java.demoqa.BaseTest;
+import test.java.demoqa.ISeleniumContext;
+import test.java.demoqa.PageObjectBase;
+import test.java.demoqa.SeleniumContext;
 
-public class LoginDemoqaPage extends BaseTest {
+public class LoginDemoqaPage extends PageObjectBase {
 
     private WebDriver driver;
     private WebDriverWait wait;
+    private final SeleniumContext seleniumContext;
+
 
 
     private final String ExpectedErrorMsgInvalidLogin = "Invalid username or password!";
@@ -26,8 +31,10 @@ public class LoginDemoqaPage extends BaseTest {
     @FindBy(xpath = "//input[contains(@id,'password')]")
     private WebElement userPassword;
 
-    @FindBy(xpath = "//button[contains(@id,'login')]")
-    private WebElement loginButton;
+    //@FindBy(xpath = "//button[contains(@id,'login')]")
+    //private WebElement loginButton;
+
+    private final By loginButton = By.xpath("//button[contains(@id,'login')]");
 
     @FindBy(xpath = "//button[contains(@id,'submit')]")
     private WebElement logoutButton;
@@ -37,20 +44,21 @@ public class LoginDemoqaPage extends BaseTest {
     private WebElement invalidUsernamePasswordErrorMsg;
 
     // Constructor to initialize the driver and instantiate elements using PageFactory
-    public LoginDemoqaPage(WebDriver driver,WebDriverWait wait) {
+    public LoginDemoqaPage(WebDriver driver, WebDriverWait wait , ISeleniumContext context) {
+        super(context);
+        seleniumContext = (SeleniumContext) context;
         this.driver = driver;
         PageFactory.initElements(driver, this);
         this.wait = wait;
     }
 
-    public LoginDemoqaPage() {
-
-    }
 
 
-    public void enterUsername(String email) {
+
+    public void enterUsername(String username) {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[contains(@id,'userName')]")));
-        userName.sendKeys(email);
+
+        userName.sendKeys(username);
     }
 
     public void enterPassword(String password) {
@@ -58,9 +66,12 @@ public class LoginDemoqaPage extends BaseTest {
     }
 
     public void clickLoginButton() {
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(@id,'login')]")));
-        ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView(true);", loginButton);
-        loginButton.click();
+        //wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(@id,'login')]")));
+        //seleniumContext.waitUntilElementClickable(loginButton);
+        //((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView(true);", loginButton);
+        seleniumContext.scrollToElement(loginButton);
+        seleniumContext.click(loginButton);
+        //loginButton.click();
     }
 
     public void validateProfilePageDisplayed(){
@@ -73,5 +84,10 @@ public class LoginDemoqaPage extends BaseTest {
         wait.until(ExpectedConditions.visibilityOf(invalidUsernamePasswordErrorMsg));
         ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView(true);", invalidUsernamePasswordErrorMsg);
         Assert.assertEquals(invalidUsernamePasswordErrorMsg.getText(),ExpectedErrorMsgInvalidLogin,"Invalid login scenario is failed");
+    }
+
+    public void openUrl(){
+        driver.get("https://demoqa.com/books");
+        driver.manage().window().maximize();
     }
 }

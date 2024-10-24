@@ -9,6 +9,7 @@ import com.aventstack.extentreports.markuputils.Markup;
 import com.aventstack.extentreports.markuputils.MarkupHelper;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
+import io.cucumber.java.en.Given;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 import main.utils.PropertyFileReader;
@@ -41,6 +42,9 @@ public class BaseTest {
     public static PropertyFileReader dataReader;
     public static PropertyFileReader dataReaderApi;
     public static Logger log;
+    public static SeleniumContext seleniumContext;
+    protected final ThreadLocal<Browser> browserThreadLocal = new ThreadLocal<>();
+
 
     @BeforeTest
     public void beforeTestMethod() {
@@ -53,8 +57,10 @@ public class BaseTest {
         extent.setSystemInfo("Automation Tester", "Arun");
         extent.attachReporter(htmlReporter);
         log = LogManager.getLogger(this.getClass());
+        seleniumContext = new SeleniumContext();
 
     }
+
 
     @BeforeMethod
     public void beforeMethodMethod(Method testMethod) {
@@ -63,10 +69,17 @@ public class BaseTest {
         dataReaderApi = new PropertyFileReader("src/main/resources/userCredApiTestData.properties");
         logger = extent.createTest(testMethod.getName());
         if(configReader.getProperty("testmode").contains("ui")){
-            setupDriver(configReader.getProperty("browser"));
-            driver.navigate().to("https://demoqa.com/books");
-            driver.getTitle();
-            driver.manage().window().maximize();
+            //setupDriver(configReader.getProperty("browser"));
+            browserThreadLocal.set(new BrowserFactory());
+            browserThreadLocal.get().start(configReader.getProperty("browser"));
+            seleniumContext =(SeleniumContext) browserThreadLocal.get().getSeleniumContext();
+            seleniumContext.getDriver().navigate().to("https://demoqa.com/books");
+            driver = seleniumContext.getDriver();
+            //driver.navigate().to("https://demoqa.com/books");
+            //driver.getTitle();
+            //driver.manage().window().maximize();
+            seleniumContext.getDriver().manage().window().maximize();
+
             wait = new WebDriverWait(driver,30);
             log.log(Level.INFO, "Navigating to " + configReader.getProperty("baseUrl"));
 
@@ -121,6 +134,7 @@ public class BaseTest {
 
             // Instantiate the chrome driver
             driver = new ChromeDriver(options);
+
         } else if (browserName.equalsIgnoreCase("SAFARI")) {
             WebDriverManager.safaridriver().setup();
             driver = new SafariDriver();
@@ -129,6 +143,30 @@ public class BaseTest {
             driver = new InternetExplorerDriver();
         }
         log.log(Level.INFO, "Launching browser: " + browserName);
+    }
+
+    public void openURL() {
+        configReader = new PropertyFileReader("src/main/resources/config.properties");
+        dataReader = new PropertyFileReader("src/main/resources/testData.properties");
+        dataReaderApi = new PropertyFileReader("src/main/resources/userCredApiTestData.properties");
+        //logger = extent.createTest(testMethod.getName());
+        if(configReader.getProperty("testmode").contains("ui")){
+            //setupDriver(configReader.getProperty("browser"));
+            browserThreadLocal.set(new BrowserFactory());
+            browserThreadLocal.get().start(configReader.getProperty("browser"));
+            seleniumContext =(SeleniumContext) browserThreadLocal.get().getSeleniumContext();
+            seleniumContext.getDriver().navigate().to("https://demoqa.com/books");
+            driver = seleniumContext.getDriver();
+            //driver.navigate().to("https://demoqa.com/books");
+            //driver.getTitle();
+            //driver.manage().window().maximize();
+            seleniumContext.getDriver().manage().window().maximize();
+
+            wait = new WebDriverWait(driver,30);
+            log.log(Level.INFO, "Navigating to " + configReader.getProperty("baseUrl"));
+
+        }
+
     }
 
 }

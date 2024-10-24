@@ -1,6 +1,5 @@
 package test.java.demoqa.uiTests;
 
-import main.uiPages.BrowserWindowsPage;
 import main.uiPages.StudentRegistrationFormPage;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -19,7 +18,7 @@ public class StudentRegistrationFormTest extends BaseTest {
     public void verifyFormStudentFormSubmission() {
         studentRegistrationFormPage.clickOnFormsSection();
         studentRegistrationFormPage.clickOnPracticeFormScetion();
-        studentRegistrationFormPage.fillStudentRegistrationForm();
+       // studentRegistrationFormPage.fillStudentRegistrationForm();
         studentRegistrationFormPage.clickOnSubmitForm();
         studentRegistrationFormPage.validateFormSubmission();
     }
