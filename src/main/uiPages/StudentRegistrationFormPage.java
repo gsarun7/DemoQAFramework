@@ -4,7 +4,6 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import test.java.demoqa.BaseTest;
@@ -94,7 +93,7 @@ public class StudentRegistrationFormPage extends BaseTest {
         practiceFormSection.click();
     }
 
-    public void fillStudentRegistrationForm() {
+    public void fillStudentRegistrationForm(String arg0, String arg1, String arg2, String arg3, String arg4, String arg5, String arg6, String arg7) {
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[contains(@id,'firstName')]")));
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", firstNameTextbox);
@@ -121,6 +120,36 @@ public class StudentRegistrationFormPage extends BaseTest {
         cityDropdown.sendKeys(dataReader.getProperty("city"));
         cityDropdown.sendKeys(Keys.ENTER);
     }
+
+    public void fillStudentRegistrationForm(String firstName,String lastName,String email,String mobilenumer , String subject,
+                                             String currentAddress, String state , String city, String attachment) {
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[contains(@id,'firstName')]")));
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", firstNameTextbox);
+        firstNameTextbox.sendKeys(firstName);
+        lastNameTextbox.sendKeys(lastName);
+        emailTextbox.sendKeys(email);
+        if (!genderMaleRadioButton.isSelected()) {
+            ((JavascriptExecutor) driver).executeScript("arguments[0].click();", genderMaleRadioButton);
+        }
+        mobileNumberTextbox.sendKeys(mobilenumer);
+        subjectDropdown.click();
+        subjectDropdown.sendKeys(subject);
+        subjectDropdown.sendKeys(Keys.ENTER);
+        if (!hobbiesSportsCheckbox.isSelected()) {
+            ((JavascriptExecutor) driver).executeScript("arguments[0].click();", hobbiesSportsCheckbox);
+        }
+        pictureAttachmentButton.sendKeys(attachment);
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", currentAddressTextArea);
+        currentAddressTextArea.sendKeys(currentAddress);
+        stateDropdownArrow.click();
+        stateDropdown.sendKeys(state);
+        stateDropdown.sendKeys(Keys.ENTER);
+        cityDropdownArrow.click();
+        cityDropdown.sendKeys(city);
+        cityDropdown.sendKeys(Keys.ENTER);
+    }
+
 
     public void clickOnSubmitForm() {
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[contains(@id,'submit')]")));

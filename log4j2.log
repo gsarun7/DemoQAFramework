@@ -255,3 +255,38 @@
 [INFO ] 2024-10-17 19:59:55.844 [TestNG-test=Chrome Test-2] LoginPageTests - Navigating to https://demoqa.com/login
 [INFO ] 2024-10-17 19:59:55.847 [TestNG-test=Chrome Test-1] LoginPageTests - Navigating to https://demoqa.com/login
 [INFO ] 2024-10-17 19:59:58.680 [TestNG-test=Chrome Test-2] LoginPageTests - Launching browser: chrome
+[INFO ] 2024-10-17 22:44:37.208 [TestNG-test=Chrome Test-1] LoginPageTests - Launching browser: chrome
+[INFO ] 2024-10-17 22:44:37.279 [TestNG-test=Chrome Test-2] LoginPageTests - Launching browser: chrome
+[INFO ] 2024-10-17 22:44:56.758 [TestNG-test=Chrome Test-2] LoginPageTests - Navigating to https://demoqa.com/login
+[INFO ] 2024-10-17 22:45:19.034 [TestNG-test=Chrome Test-2] LoginPageTests - Launching browser: chrome
+[INFO ] 2024-10-17 22:45:19.059 [TestNG-test=Chrome Test-1] LoginPageTests - Launching browser: chrome
+[INFO ] 2024-10-17 22:45:49.139 [TestNG-test=Chrome Test-1] LoginPageTests - Navigating to https://demoqa.com/login
+[INFO ] 2024-10-17 22:45:49.139 [TestNG-test=Chrome Test-2] LoginPageTests - Navigating to https://demoqa.com/login
+[INFO ] 2024-10-17 22:49:21.988 [main] LoginPageTests - Launching browser: chrome
+[INFO ] 2024-10-17 22:49:23.644 [main] LoginPageTests - Navigating to https://demoqa.com/login
+[INFO ] 2024-10-17 22:49:37.469 [main] LoginPageTests - Launching browser: chrome
+[INFO ] 2024-10-17 22:49:53.228 [main] LoginPageTests - Navigating to https://demoqa.com/login
+[INFO ] 2024-10-17 22:49:56.851 [main] LoginPageTests - Launching browser: chrome
+[INFO ] 2024-10-17 22:50:15.980 [main] LoginPageTests - Navigating to https://demoqa.com/login
+[INFO ] 2024-10-17 22:50:20.422 [main] LoginPageTests - Launching browser: chrome
+[INFO ] 2024-10-17 22:50:52.577 [main] LoginPageTests - Navigating to https://demoqa.com/login
+[INFO ] 2024-10-18 13:01:15.930 [main] LoginPageTests - Navigating to https://demoqa.com/login
+[INFO ] 2024-10-18 13:02:53.407 [main] LoginPageTests - Navigating to https://demoqa.com/login
+[INFO ] 2024-10-18 13:04:19.433 [main] LoginPageTests - Navigating to https://demoqa.com/login
+[INFO ] 2024-10-18 13:05:33.174 [main] LoginPageTests - Navigating to https://demoqa.com/login
+[INFO ] 2024-10-18 13:08:07.797 [main] LoginPageTests - Navigating to https://demoqa.com/login
+[INFO ] 2024-10-18 13:16:00.395 [main] LoginPageTests - Navigating to https://demoqa.com/login
+[INFO ] 2024-10-18 13:20:08.580 [main] LoginPageTests - Navigating to https://demoqa.com/login
+[INFO ] 2024-10-18 13:20:47.395 [main] LoginPageTests - Navigating to https://demoqa.com/login
+[INFO ] 2024-10-18 13:22:09.521 [main] LoginPageTests - Navigating to https://demoqa.com/login
+[INFO ] 2024-10-18 13:22:27.282 [main] LoginPageTests - Navigating to https://demoqa.com/login
+[INFO ] 2024-10-18 13:26:37.105 [main] LoginPageTests - Navigating to https://demoqa.com/login
+[INFO ] 2024-10-18 13:26:53.399 [main] LoginPageTests - Navigating to https://demoqa.com/login
+[INFO ] 2024-10-18 13:27:01.976 [main] LoginPageTests - Navigating to https://demoqa.com/login
+[INFO ] 2024-10-18 13:27:21.676 [main] LoginPageTests - Navigating to https://demoqa.com/login
+[INFO ] 2024-10-18 13:36:54.501 [main] LoginPageTests - Navigating to https://demoqa.com/login
+[INFO ] 2024-10-18 14:09:58.392 [main] LoginPageTests - Navigating to https://demoqa.com/login
+[INFO ] 2024-10-22 15:08:58.273 [main] LoginPageTests - Navigating to https://demoqa.com/login
+[INFO ] 2024-10-22 15:09:18.578 [main] LoginPageTests - Navigating to https://demoqa.com/login
+[INFO ] 2024-10-22 15:09:36.479 [main] LoginPageTests - Navigating to https://demoqa.com/login
+[INFO ] 2024-10-22 15:09:54.291 [main] LoginPageTests - Navigating to https://demoqa.com/login

@@ -7,11 +7,13 @@ import test.java.demoqa.BaseTest;
 
 public class LoginPageTests extends BaseTest {
 
+
+
     private LoginDemoqaPage loginDemoqaPage;
 
     @BeforeMethod
     public void setup() {
-        loginDemoqaPage = new LoginDemoqaPage(driver,wait);
+        loginDemoqaPage = new LoginDemoqaPage(driver,wait,seleniumContext);
     }
 
     @Test

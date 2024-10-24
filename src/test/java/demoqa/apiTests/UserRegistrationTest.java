@@ -15,8 +15,8 @@ public class UserRegistrationTest extends BaseTest {
         RequestSpecification request = RestAssured.given();
         request.header("Content-Type", "application/json");
         Response response = request.body("{" +
-                "  \"password\" : \"Test@@1231yy\"," +
-                "  \"userName\" : \"TOOLSQA-Test1yy\"" +
+                "  \"password\" : \"Test@@1231yyy\"," +
+                "  \"userName\" : \"TOOLSQA-Test1yyy\"" +
                 "}").post("/Account/v1/User");
 
         Assert.assertEquals(response.getStatusCode(), 201);
