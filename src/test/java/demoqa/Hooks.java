@@ -2,16 +2,24 @@ package test.java.demoqa;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
+import com.aventstack.extentreports.markuputils.ExtentColor;
+import com.aventstack.extentreports.markuputils.Markup;
+import com.aventstack.extentreports.markuputils.MarkupHelper;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
+import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.BeforeAll;
+import io.cucumber.java.Scenario;
 import main.utils.PropertyFileReader;
+import main.utils.SuiteListener;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.ITestResult;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 
@@ -70,6 +78,34 @@ public class Hooks {
             wait = new WebDriverWait(driver,30);
 //            log.log(Level.INFO, "Navigating to " + configReader.getProperty("baseUrl"));
 
+        }
+
+    }
+
+    @After
+    public void after_MethodMethod(Scenario scenario) {
+
+        String methodName = scenario.getName();
+        String logText;
+        if (scenario.getStatus() == io.cucumber.java.Status.PASSED) {
+            logText = "Test Case: " + methodName + " PASSED";
+            Markup m = MarkupHelper.createLabel(logText, ExtentColor.GREEN);
+           // logger.log(Status.PASS, m);
+        } else if (scenario.getStatus() == io.cucumber.java.Status.SKIPPED) {
+            logText = "Test Case: " + methodName + " SKIPPED";
+            Markup m = MarkupHelper.createLabel(logText, ExtentColor.AMBER);
+          //  logger.log(Status.SKIP, m);
+        } else if (scenario.getStatus() == io.cucumber.java.Status.FAILED) {
+            logText = "Test Case: " + methodName + " FAILED";
+            Markup m = MarkupHelper.createLabel(logText, ExtentColor.RED);
+            //SuiteListener suiteListener = new SuiteListener();
+            //suiteListener.onTestFailure(scenario);
+           // logger.log(Status.FAIL, m);
+
+
+        }
+        if(configReader.getProperty("testmode").contains("ui")) {
+            driver.quit();
         }
 
     }
