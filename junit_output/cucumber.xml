@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="247.961" tests="3" skipped="0" failures="0" errors="0">
+<testcase classname="Browser Windows Test" name="Browser navigation scenario" time="116.533">
+<system-out><![CDATA[
+Given Open URl..............................................................passed
+And Click new window button.................................................passed
+When User Navigate to new window............................................passed
+Then Verify text in new window..............................................passed
+And User navigate to original window........................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Login Test" name="Valid Login scenario - #1.1" time="93.089">
+<system-out><![CDATA[
+Given Open URl..............................................................passed
+And click login.............................................................passed
+When enter user name "ArunUN"...............................................passed
+And enter password "Test@123"...............................................passed
+And click login.............................................................passed
+Then User navigate to profile page..........................................passed
+]]></system-out>
+</testcase>
+<testcase classname="Student Registration Form Test" name="Verify student registration form submission - #1.1" time="38.037">
+<system-out><![CDATA[
+Given Open URl..............................................................passed
+And Click on Form section...................................................passed
+And Click on Practice from section..........................................passed
+And Fill Student form registration with data "Arun""G""abc@gmail.com""1234567890""Hindi""No 123 MG Road""Haryana""Karnal""C:\Users\Log ON\IdeaProjects\TestAutomationParker\src\main\resources\images\pnga-stack-books-isolated-white-background.jpg".passed
+When Click on submit button.................................................passed
+Then Validate submit form...................................................passed
+]]></system-out>
+</testcase>
+</testsuite>
