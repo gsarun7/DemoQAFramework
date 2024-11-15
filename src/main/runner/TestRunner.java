@@ -13,7 +13,7 @@ import io.cucumber.plugin.Plugin;
      features = {"src/test/java/demoqa/features"},
      glue = { "test.java.demoqa.uiStepdefs" , "test.java.demoqa"},
 tags = "@RegTC",
-        plugin = {"pretty","html:test-output","json:json_output/cucumber.json","junit:junit_output/cucumber.xml"
+        plugin = {"pretty","html:target/cucumber-reports.html","json:json_output/cucumber.json","junit:junit_output/cucumber.xml"
 
         }
 

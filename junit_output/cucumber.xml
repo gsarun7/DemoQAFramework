@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="247.961" tests="3" skipped="0" failures="0" errors="0">
-<testcase classname="Browser Windows Test" name="Browser navigation scenario" time="116.533">
+<testsuite name="Cucumber" time="88.481" tests="4" skipped="0" failures="0" errors="0">
+<testcase classname="Browser Windows Test" name="Browser navigation scenario" time="9.583">
 <system-out><![CDATA[
 Given Open URl..............................................................passed
 And Click new window button.................................................passed
@@ -9,7 +9,7 @@ Then Verify text in new window..............................................pass
 And User navigate to original window........................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Login Test" name="Valid Login scenario - #1.1" time="93.089">
+<testcase classname="Login Test" name="Valid Login scenario - #1.1" time="31.514">
 <system-out><![CDATA[
 Given Open URl..............................................................passed
 And click login.............................................................passed
@@ -19,7 +19,17 @@ And click login.............................................................pass
 Then User navigate to profile page..........................................passed
 ]]></system-out>
 </testcase>
-<testcase classname="Student Registration Form Test" name="Verify student registration form submission - #1.1" time="38.037">
+<testcase classname="Login Test" name="Invalid Login scenario - #1.1" time="21.17">
+<system-out><![CDATA[
+Given Open URl..............................................................passed
+And click login.............................................................passed
+When enter user name "ArunUN"...............................................passed
+And enter password "Test@12"................................................passed
+And click login.............................................................passed
+Then User gets error message stating invalid username or password...........passed
+]]></system-out>
+</testcase>
+<testcase classname="Student Registration Form Test" name="Verify student registration form submission - #1.1" time="26.001">
 <system-out><![CDATA[
 Given Open URl..............................................................passed
 And Click on Form section...................................................passed

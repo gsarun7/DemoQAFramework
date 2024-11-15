@@ -1,0 +1,8 @@
+<configuration>
+    <reportName>My Cucumber Test Report</reportName>
+    <reportHeadline>Test Execution Summary</reportHeadline>
+    <theme>standard</theme>
+    <encoding>UTF-8</encoding>
+    <protocol>http</protocol>
+    <autoCreateRelativePathMedia>true</autoCreateRelativePathMedia>
+</configuration>

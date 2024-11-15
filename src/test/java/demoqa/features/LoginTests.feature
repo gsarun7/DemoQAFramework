@@ -12,6 +12,7 @@ Feature: Login Test
     |Username|Password|
     | ArunUN       | Test@123       |
 
+  @RegTC
   Scenario Outline: Invalid Login scenario
     Given Open URl
     And click login

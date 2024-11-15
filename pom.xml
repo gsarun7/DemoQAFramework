@@ -26,7 +26,7 @@
                 <configuration>
                     <!-- TestNG Suite XML files list for test execution -->
                     <suiteXmlFiles>
-                        <systemPropertiesFiles>testng.xml</systemPropertiesFiles>
+                        <suiteXmlFile>src/testng.xml</suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
             </plugin>
@@ -151,6 +151,7 @@
             <artifactId>cucumber-testng</artifactId>
             <version>7.15.0</version>
         </dependency>
+
 
 
         <!-- https://mvnrepository.com/artifact/org.json/json -->
