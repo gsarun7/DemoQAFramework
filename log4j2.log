@@ -290,3 +290,6 @@
 [INFO ] 2024-10-22 15:09:18.578 [main] LoginPageTests - Navigating to https://demoqa.com/login
 [INFO ] 2024-10-22 15:09:36.479 [main] LoginPageTests - Navigating to https://demoqa.com/login
 [INFO ] 2024-10-22 15:09:54.291 [main] LoginPageTests - Navigating to https://demoqa.com/login
+[INFO ] 2024-11-15 16:05:52.275 [main] BookApiTests - Navigating to https://demoqa.com/login
+[INFO ] 2024-11-15 16:06:01.972 [main] BookApiTests - Navigating to https://demoqa.com/login
+[INFO ] 2024-11-15 16:08:04.260 [main] BrowserWindowsTest - Navigating to https://demoqa.com/login

@@ -2,11 +2,11 @@
 <suite name="Suite">
     <test name="Chrome Test" parallel="tests" thread-count="2">
         <classes>
-            <!--<class name="test.java.demoqa.uiTests.LoginPageTests"/>
+            <!--<class name="test.java.demoqa.uiTests.LoginPageTests"/>-->
           <class name="test.java.demoqa.uiTests.BrowserWindowsTest"/>
-          <class name="test.java.demoqa.uiTests.StudentRegistrationFormTest"/>-->
+            <!--<class name="test.java.demoqa.uiTests.StudentRegistrationFormTest"/>
         <class name="test.java.demoqa.apiTests.BookApiTests"/>
-          <class name="test.java.demoqa.apiTests.UserRegistrationTest"/>
+          <class name="test.java.demoqa.apiTests.UserRegistrationTest"/>-->
         </classes>
     </test>
 </suite>
